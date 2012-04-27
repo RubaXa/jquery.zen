@@ -38,7 +38,7 @@ $.zen('.menu', {
 		'&click': function (){ // .delegate()
 			$.zen(this, {
 				'^.menu': { // .closest()
-					'*.selected': { // .children()
+					'>.selected': { // .children()
 						'-class': 'selected' // .removeClass()
 					}
 				},
