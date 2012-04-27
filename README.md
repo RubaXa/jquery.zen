@@ -134,7 +134,7 @@ $.zen('.menu', {
 ```js
 	$.z('.items', { '+': '#id' });
 	$.z('.items', { '+': ['#id', '.sel', { '#id: { '+class': 'sel' } } });
-	$.z('.items', { '+': { '#id: { '+class': 'sel' } } });
+	$.z('.items', { '+': { '#id': { '+class': 'sel' } } });
 ```
 
 
