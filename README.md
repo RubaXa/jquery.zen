@@ -4,6 +4,9 @@
 ## Old school
 ```js
 $('.menu')
+	.find('.disabled')
+		.remove()
+		.end()
 	.addClass('ready')
 	.on('click', '.item', function (){
 		$(this)
@@ -33,6 +36,7 @@ $('.menu')
 ## Zen school
 ```js
 $.zen('.menu', {
+	'.disabled': '-', // .remove()
 	'+class': 'ready', // .addClass()
 	'.item': { // .find()
 		'&click': function (){ // .delegate()
