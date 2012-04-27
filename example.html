@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery.Zen</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+	<script src="./jquery.zen.js"></script>
+</head>
+<body>
+
+	<div id="elm">#elm</div>
+	<div id="elm-inner">inner elm</div>
+	<div id="elm-2">remove me</div>
+
+	<ul class="js-menu">
+		<li id="item-0">item 0</li>
+	</ul>
+
+	<ul>
+		<li id="item-1">item 1</li>
+		<li id="item-2" class="selected">item 2</li>
+	</ul>
+
+	<script>
+		$('#elm').zen({
+			  '=': 'Click Me!'
+			, '+': { '#elm-inner': { 'css': { 'color': '#c00' }  } }
+			, 'click': function (){ alert('Yahoo') }
+			, 'css': { border: '1px solid red' }
+			, '+class': 'test'
+		});
+
+
+		$.zen({
+			// .remove()
+			'#elm-2': '-',
+
+			'.js-menu': {
+				// .append()
+				'+': ['#item-1', { '#item-2': { '+class': 'added' } }],
+
+				'css': { 'color': '#f60' },
+
+				// .addClass
+				'+class': 'first-menu',
+
+				 // .children()
+				'>': {
+					// .filter()
+					'*:not(.selected)': {
+						// .css()
+						'attr': { title: 'not-selected' },
+						'css': { 'background-color': 'red' }
+					}
+				},
+
+				// .find()
+				':first': function (){
+					$(this).css('color', 'green')
+				},
+
+				// .find
+				'li': {
+					'+class': 'item',
+
+					// .each()
+					'*': function (){
+						$(this).css('border-top', '1px solid blue');
+					},
+
+					// .filter()
+					'*.selected': {
+						'-class': 'selected'
+					},
+
+					'&click': function (evt){
+						alert('delegate: '+evt.currentTarget.innerHTML);
+					}
+				}
+			}
+		});
+	</script>
+
+</body>
+</html>
