@@ -133,7 +133,7 @@ $.zen('.menu', {
 ### .append
 ```js
 	$.z('.items', { '+': '#id' });
-	$.z('.items', { '+': ['#id', '.sel', { '#id: { '+class': 'sel' } } });
+	$.z('.items', { '+': ['#id', '.sel', { '#id': { '+class': 'sel' } } });
 	$.z('.items', { '+': { '#id': { '+class': 'sel' } } });
 ```
 
