@@ -7,7 +7,8 @@
 	'use strict';
 
 	var
-		  toStr = ({}).toString
+		  _rlive = /([a-z0-9:\.]+)(\s.+)?/
+
 		, $dummy = $()
 		, $document = $(document)
 	;
@@ -62,7 +63,8 @@
 						break;
 
 					case '&': // delegate
-							$('body').delegate($ctx.selector, name, val);
+							name = name.match(_rlive);
+							$('body').delegate(name[2] ? name[2] : $ctx.selector, name[2] ? name[1] : name[0], val);
 						break;
 
 					case '=':

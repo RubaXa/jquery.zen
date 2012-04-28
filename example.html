@@ -75,6 +75,10 @@
 					'&click': function (evt){
 						alert('delegate: '+evt.currentTarget.innerHTML);
 					}
+				},
+
+				'&mouseover li': function (evt){
+					console.log('over:', evt.currentTarget.innerHTML);
 				}
 			}
 		});

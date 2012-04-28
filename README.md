@@ -33,6 +33,7 @@ $('.menu')
 ```
 
 
+<a name="zen"></a>
 ## Zen school
 ```js
 $.zen('.menu', {
@@ -60,6 +61,14 @@ $.zen('.menu', {
 	'textarea': { '=': '' }
 	'.username': { '=': '%username%' }
 });
+
+// OR
+
+$('.menu').z({
+	find: { '.disabled': 'remove' },
+	addClass: 'ready',
+
+})
 ```
 
 
