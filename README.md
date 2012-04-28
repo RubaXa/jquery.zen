@@ -4,6 +4,7 @@
 ## Old school
 ```js
 $('.menu')
+	.append('<li>last child</li>')
 	.find('.disabled')
 		.remove()
 		.end()
@@ -37,6 +38,7 @@ $('.menu')
 ## Zen school
 ```js
 $.zen('.menu', {
+	'+': '<li>last child</li>',
 	'.disabled': '-', // .remove()
 	'+class': 'ready', // .addClass()
 	'.item': { // .find()
