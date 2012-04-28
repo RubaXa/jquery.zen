@@ -38,7 +38,7 @@ $('.menu')
 ## Zen school
 ```js
 $.zen('.menu', {
-	'+': '<li>last child</li>',
+	'+': '<li>last child</li>', // .append()
 	'.disabled': '-', // .remove()
 	'+class': 'ready', // .addClass()
 	'.item': { // .find()
