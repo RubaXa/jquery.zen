@@ -68,8 +68,8 @@ $.zen('.menu', {
 
 $('.menu').z({
 	find: { '.disabled': 'remove' },
-	addClass: 'ready',
-
+	addClass: 'ready'
+	/*...*/
 })
 ```
 
