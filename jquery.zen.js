@@ -1,3 +1,11 @@
+/*!
+ * jQuery Zen
+ * https://github.com/RubaXa/jquery.zen#zen
+ *
+ * @author	RubaXa	<trash@rubaxa.org>
+ */
+
+
 /**
  * @param	{document}	document
  * @param	{jQuery}	$
@@ -27,16 +35,24 @@
 			// .remove();
 			$ctx.remove();
 		}
+		else if( $.isArray(obj) ){
+			for( var i = 0, n = obj.length; i < n; i += 1 ){
+				zen($ctx, obj[i]);
+			}
+		}
 		else if( typeof obj === 'function' ){
 			$ctx.each(obj);
 		}
+		else if( /string|number/.test(typeof obj) ){
+			$ctx.html(obj);
+		}
 		else {
 			var key, first, val, name;
-
 			for( key in obj ){
-				val = obj[key];
-				first = key.charAt(0);
-				name = key.substr(1);
+				val		= obj[key];
+				first	= key.charAt(0);
+				name	= key.substr(1);
+
 
 				switch( first ){
 					case '': $ctx.each(val); break;
