@@ -46,10 +46,10 @@ $.zen('.menu', {
 			$.zen(this, {
 				'^.menu': { // .closest()
 					'>.selected': { // .children()
-						'-class': 'selected' // .removeClass()
+						'-.': 'selected' // .removeClass()
 					}
 				},
-				'+.': 'active', // .addClass()
+				'+.': 'selected', // .addClass()
 			});
 		},
 		'hover': function (evt){
