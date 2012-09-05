@@ -4,6 +4,12 @@
 	<title>jQuery.Zen</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	<script src="./jquery.zen.js"></script>
+	<style>
+		.hover_yes {
+			color: #000;
+			background-color: #c00;
+		}
+	</style>
 </head>
 <body>
 
@@ -26,7 +32,10 @@
 			, '+': { '#elm-inner': { 'css': { 'color': '#c00' }  } }
 			, 'click': function (){ alert('Yahoo') }
 			, 'css': { border: '1px solid red' }
-			, '+class': 'test'
+			, '+.': 'test'
+			, 'hover': function (evt){
+				$(this).z({ '+-.': [evt.type == 'mouseenter', 'hover_yes'] })
+			}
 		});
 
 

@@ -123,6 +123,12 @@
 					zenApply($ctx, mod === '+' ? 'attr' : 'removeAttr', val);
 				break;
 
+			case '+.':
+			case '-.': // toggleClass
+					zenApply($ctx, val[0] ? 'addClass' : 'removeClass', val[1]);
+				break;
+
+			case '.':
 			case 'class': // .addClass/removeClass(...)
 					zenApply($ctx, mod === '+' ? 'addClass' : 'removeClass', val);
 				break;

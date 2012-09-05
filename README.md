@@ -49,7 +49,13 @@ $.zen('.menu', {
 						'-class': 'selected' // .removeClass()
 					}
 				},
-				'+class': 'selected' // .addClass()
+				'+.': 'active', // .addClass()
+			});
+		},
+		'hover': function (evt){
+			$(this).z({
+				// .toggleClass
+				'+-.': [evt.type == 'mouseenter', 'hover_yes']
 			});
 		},
 		'': function (){ /* each */ }
