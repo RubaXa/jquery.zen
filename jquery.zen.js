@@ -106,7 +106,7 @@
 		}
 
 		return	$ctx;
-	}
+	};
 
 
 	var _append = {

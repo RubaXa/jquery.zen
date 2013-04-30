@@ -26,7 +26,14 @@
 		<li id="item-2" class="selected">item 2</li>
 	</ul>
 
+	<div class="root">
+		<div class="combo-1">1</div>
+		<div class="combo-2">2</div>
+	</div>
+
 	<script>
+		$('.combo-1').z('^.root .combo-2');
+
 		$('#elm').zen({
 			  '=': 'Click Me!'
 			, '+': { '#elm-inner': { 'css': { 'color': '#c00' }  } }
